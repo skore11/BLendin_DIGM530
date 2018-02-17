@@ -1,98 +1,97 @@
 fileFormatVersion: 2
-guid: b33f0c0195f242145a01f94c59896b3f
-timeCreated: 1518478895
+guid: 3d0a4806fde04ff44b5cb05f5975838f
+timeCreated: 1518554976
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: chest
-    100002: front1
-    100004: front2
-    100006: head
-    100008: hip
-    100010: Left_Ankle
-    100012: Left_Ankle 1
-    100014: Left_Elbow
-    100016: Left_Femur
-    100018: Left_Heel
-    100020: Left_Heel 1
-    100022: Left_Knee
-    100024: Left_Shoulder
-    100026: Left_Toe
-    100028: Left_Toe 1
-    100030: LfootIK
-    100032: LhandIK
-    100034: //RootNode
-    100036: mid
-    100038: pCube1
-    100040: pSphere1
-    100042: pSphere2
-    100044: pSphere3
-    100046: RhandIK
-    100048: Right_Ankle
-    100050: Right_Ankle 1
-    100052: Right_Elbow
-    100054: Right_Femur
-    100056: Right_Heel
-    100058: Right_Heel 1
-    100060: Right_Knee
-    100062: Right_Shoulder
-    100064: Right_Toe
-    100066: Right_Toe 1
-    100068: RlfootIK
-    100070: root
-    100072: snout
-    100074: transform1
-    100076: transform2
-    100078: transform3
+    100002: head
+    100004: hip
+    100006: Left_Ankle
+    100008: Left_Ankle 1
+    100010: Left_Elbow
+    100012: Left_Femur
+    100014: Left_Heel
+    100016: Left_Heel 1
+    100018: Left_Knee
+    100020: Left_Shoulder
+    100022: Left_Toe
+    100024: Left_Toe 1
+    100026: LfootIK
+    100028: LhandIK
+    100030: //RootNode
+    100032: mid
+    100034: pCube1
+    100036: pSphere1
+    100038: pSphere2
+    100040: pSphere3
+    100042: RhandIK
+    100044: Right_Ankle
+    100046: Right_Ankle 1
+    100048: Right_Elbow
+    100050: Right_Femur
+    100052: Right_Heel
+    100054: Right_Heel 1
+    100056: Right_Knee
+    100058: Right_Shoulder
+    100060: Right_Toe
+    100062: Right_Toe 1
+    100064: RlfootIK
+    100066: root
+    100068: snout
+    100070: transform1
+    100072: transform2
+    100074: transform3
     400000: chest
-    400002: front1
-    400004: front2
-    400006: head
-    400008: hip
-    400010: Left_Ankle
-    400012: Left_Ankle 1
-    400014: Left_Elbow
-    400016: Left_Femur
-    400018: Left_Heel
-    400020: Left_Heel 1
-    400022: Left_Knee
-    400024: Left_Shoulder
-    400026: Left_Toe
-    400028: Left_Toe 1
-    400030: LfootIK
-    400032: LhandIK
-    400034: //RootNode
-    400036: mid
-    400038: pCube1
-    400040: pSphere1
-    400042: pSphere2
-    400044: pSphere3
-    400046: RhandIK
-    400048: Right_Ankle
-    400050: Right_Ankle 1
-    400052: Right_Elbow
-    400054: Right_Femur
-    400056: Right_Heel
-    400058: Right_Heel 1
-    400060: Right_Knee
-    400062: Right_Shoulder
-    400064: Right_Toe
-    400066: Right_Toe 1
-    400068: RlfootIK
-    400070: root
-    400072: snout
-    400074: transform1
-    400076: transform2
-    400078: transform3
-    2000000: front1
-    2000002: front2
-    2100000: lambert1
+    400002: head
+    400004: hip
+    400006: Left_Ankle
+    400008: Left_Ankle 1
+    400010: Left_Elbow
+    400012: Left_Femur
+    400014: Left_Heel
+    400016: Left_Heel 1
+    400018: Left_Knee
+    400020: Left_Shoulder
+    400022: Left_Toe
+    400024: Left_Toe 1
+    400026: LfootIK
+    400028: LhandIK
+    400030: //RootNode
+    400032: mid
+    400034: pCube1
+    400036: pSphere1
+    400038: pSphere2
+    400040: pSphere3
+    400042: RhandIK
+    400044: Right_Ankle
+    400046: Right_Ankle 1
+    400048: Right_Elbow
+    400050: Right_Femur
+    400052: Right_Heel
+    400054: Right_Heel 1
+    400056: Right_Knee
+    400058: Right_Shoulder
+    400060: Right_Toe
+    400062: Right_Toe 1
+    400064: RlfootIK
+    400066: root
+    400068: snout
+    400070: transform1
+    400072: transform2
+    400074: transform3
+    2100000: lambert2
     4300000: pSphere3
     7400000: Take 001
     9500000: //RootNode
     13700000: pSphere3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: f5785e7ca091b7241a11e0eb5c890f3a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -124,7 +123,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 20
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
