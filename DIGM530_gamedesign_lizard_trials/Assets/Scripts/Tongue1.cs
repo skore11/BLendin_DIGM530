@@ -28,10 +28,10 @@ public class Tongue1 : MonoBehaviour
         {
             if (Physics.Raycast(liz.position, liz.forward, out hit))
             {
-                Debug.Log("hit someshit" + hit);
+                //Debug.Log("hit someshit" + hit);
                 rb = hit.collider.gameObject;//assign our private rb the gameobject of raycasthit
                 
-                Debug.Log(rb.transform.position);
+               // Debug.Log(rb.transform.position);
                 
                
                 attached = true;

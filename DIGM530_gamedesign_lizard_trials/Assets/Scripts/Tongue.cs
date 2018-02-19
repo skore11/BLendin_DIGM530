@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tongue : MonoBehaviour {
-   /* public Transform liz;
+   public Transform liz;
     private RaycastHit hit;
     public GameObject rb;
     private Rigidbody rb2;
@@ -52,7 +52,7 @@ public class Tongue : MonoBehaviour {
         }
       
     }
-  */
+  
     
 }
    
