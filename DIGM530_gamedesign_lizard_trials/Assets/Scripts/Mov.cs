@@ -5,31 +5,30 @@ using UnityEngine.UI;
 
 public class Mov : MonoBehaviour {
 
-    public float mspeed;
+
 	public Text winGame;
 
-
-	// Use this for initialization
-	void Start () {
+	public Transform startMarker;
+	public Transform endMarker;
+	public float speed = 1.0F;
+	private float startTime;
+	private float journeyLength;
+	void Start() {
+		startTime = Time.time;
+		journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
 		winGame.text = "";
-		
-        //mspeed = 1f;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        transform.Translate(mspeed*(Input.GetAxis("Horizontal") * Time.deltaTime), 0f,mspeed* (Input.GetAxis("Vertical") * Time.deltaTime));
-        //transform.Rotate(mspeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, mspeed * Input.GetAxis("Vertical") * Time.deltaTime);
-
-
-    }
+	void Update() {
+		float distCovered = (Time.time - startTime) * speed;
+		float fracJourney = distCovered / journeyLength;
+		transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
+	}
+		
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "EndGame") {
-			winGame.text = "You WIN!!!!";
+			winGame.text = "You WIN!!!!";	
 		}
-			
-
-		
 	}
-
 }
+
+
