@@ -9,6 +9,7 @@ public class Balance : MonoBehaviour {
 
 	//public float rotation = 1000f;
 
+    public bool balancefail;
 
 
 	void Update()
@@ -53,10 +54,14 @@ public class Balance : MonoBehaviour {
 
 		if (45.0f<transform.rotation.eulerAngles.z && transform.rotation.eulerAngles.z<315.0f)
 			
-		  GameObject.Find("warning").GetComponent<Text>().text = "Out of Range "; 
+		{  GameObject.Find("warning").GetComponent<Text>().text = "Out of Range "; 
+		  balancefail=true;}
+
 
 		else
-		  GameObject.Find("warning").GetComponent<Text>().text = "Safe"; 
+		 {GameObject.Find("warning").GetComponent<Text>().text = "Safe"; 
+		  balancefail=false;}
+
 
 			//GetComponent<UnityEngine.UI.Text>().text = "Out of Range "; 
 
