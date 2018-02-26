@@ -5,11 +5,11 @@ using UnityEngine;
 public class ChangeMaterial : MonoBehaviour {
 
     public Material[] material;
-    Renderer rend;
+    MeshRenderer rend;
 
 	// Use this for initialization
 	void Start () {
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<MeshRenderer>();
         rend.enabled = true;
         rend.sharedMaterial = material[0];
 
@@ -18,15 +18,20 @@ public class ChangeMaterial : MonoBehaviour {
     // Update is called once per frame
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Box") 
+        Debug.Log("collided");
+        /*if (col.gameObject.tag == "Box") 
         {
-            rend.sharedMaterial = material[1];
+
+            rend.material.color = col.gameObject.GetComponent<MeshRenderer>().material.color;
+            Debug.Log("collided");
+            Debug.Log(material);
+//            rend.sharedMaterial = material[1];
+           
+        }
+       /*else
+        {
             
         }
-        else
-        {
-            rend.sharedMaterial = material[2];
-        }
-
+        */
     }
 }
