@@ -5,18 +5,25 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
 
-	public float timeLeft=10.0f;
+	public float timeLeft=6.0f;
+
+	//public bool showwarning;
 	//private int countdown=6;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 	//GameObject.Find("countdown").GetComponent<Text>().text = timeLeft+ "s";	
+
+
+    //showwarning = GameObject.Find("TailBalance").GetComponent<Balance>().balancefail;
+
+
 
 	timeLeft -= Time.deltaTime;
 
@@ -43,6 +50,8 @@ public class CountDown : MonoBehaviour {
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="1s";}
 
+
+
 	if (0.0f<=timeLeft && timeLeft<1.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="Catch!";}
@@ -56,8 +65,14 @@ public class CountDown : MonoBehaviour {
          //StartCoroutine(Example());
         // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
-         timeLeft = 10.0f;
+         timeLeft = 6.0f;
      }
+
+
+    
+
+
+
 		
 	}
 
