@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
 
-	public float timeLeft=6.0f;
+	public float timeLeft=10.0f;
 
 	//public bool showwarning;
 	//private int countdown=6;
@@ -65,7 +65,7 @@ public class CountDown : MonoBehaviour {
          //StartCoroutine(Example());
         // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
-         timeLeft = 6.0f;
+         timeLeft = 10.0f;
      }
 
 
