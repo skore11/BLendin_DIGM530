@@ -53,7 +53,7 @@ public class Balance : MonoBehaviour {
 
     
 		float zrotation = transform.rotation.eulerAngles.z;
-		print (zrotation);
+		//print (zrotation);
 
 		//print (transform.rotation.eulerAngles.z);
 
