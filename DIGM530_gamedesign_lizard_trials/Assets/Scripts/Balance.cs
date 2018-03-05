@@ -41,11 +41,16 @@ public class Balance : MonoBehaviour {
 		//}
 
 		// rotate2
-		if (Input.GetKey (KeyCode.E))
-			transform.Rotate (Vector3.back * rotationSpeed*Time.deltaTime);
+		//if (Input.GetKey (KeyCode.E))  
+	
+		//	transform.Rotate (Vector3.back * rotationSpeed*Time.deltaTime);
 
-		if (Input.GetKey (KeyCode.Q))
-			transform.Rotate (Vector3.forward * rotationSpeed*Time.deltaTime);
+		//if (Input.GetKey (KeyCode.Q))
+		//	transform.Rotate (Vector3.forward * rotationSpeed*Time.deltaTime);
+
+        float rotation = Input.GetAxis("LeftJoystickX") * rotationSpeed *Time.deltaTime;
+        transform.Rotate(0,0,rotation);
+
     
 		float zrotation = transform.rotation.eulerAngles.z;
 		print (zrotation);

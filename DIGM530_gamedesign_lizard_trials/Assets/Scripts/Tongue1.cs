@@ -24,7 +24,7 @@ public class Tongue1 : MonoBehaviour
         
         
         //int mask = LayerMask.GetMask("fly");
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("A"))
         {
             Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
             //Debug.Log(mousePosition);

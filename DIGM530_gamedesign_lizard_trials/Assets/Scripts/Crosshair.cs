@@ -18,15 +18,19 @@ public class Crosshair : MonoBehaviour {
 	}
     private void Update()
     {
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
-        var y = Input.GetAxis("Jump") * Time.deltaTime * speed;
-        transform.Translate(x, y, z);
+       // var x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        //var z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+        //var y = Input.GetAxis("Jump") * Time.deltaTime * speed;
+        //transform.Translate(x, y, z);
     }
     // Update is called once per frame
     void OnGUI () {
         var vectorx = Input.mousePosition.x;
+
+        //var vectorx= Input.GetAxis("RightJoystickX");
         var vectory = Input.mousePosition.y;
+
+       // var vectory= Input.GetAxis("RightJoystickY");
         GUI.DrawTexture(new Rect(vectorx-15, -vectory + Screen.height-15,30,30), crosshairTexture);
 	}
 }
