@@ -6,7 +6,9 @@ public class Tongue1 : MonoBehaviour
 {
     public Transform liz;
     private RaycastHit hit;
+    private RaycastHit hit2;
     private GameObject rb;
+    private GameObject rb2;
     private bool attached = false;
     public float momentum;
     private float mouseposY;
@@ -63,11 +65,27 @@ public class Tongue1 : MonoBehaviour
             lineRenderer.SetPosition(1, rb.transform.position);
             if (Vector3.Distance(liz.transform.position, rb.transform.position) <= 1)
             {
-                liz.GetComponent<MeshRenderer>().material.color = rb.GetComponent<MeshRenderer>().material.color;
-                rb.gameObject.SetActive(false);
-                
-                attached = false;
-                
+                Vector3 left = liz.transform.TransformDirection(Vector3.left);
+                if (Physics.Raycast(liz.position, left, out hit2))
+                {
+                    //  liz.GetComponent<MeshRenderer>().material.color = rb.GetComponent<MeshRenderer>().material.color;
+                    rb2 = hit2.collider.gameObject;
+                    Debug.Log("name of gameobject" + rb2);
+                    Renderer rend = rb2.GetComponent<MeshRenderer>();
+                    if (rend != null)
+                    {
+                        Texture2D tex = (Texture2D)rend.material.mainTexture;
+                        Debug.Log(rend.material.color);
+                        //liz.GetComponent<MeshRenderer>().material.color = rend.material.color * ((tex == null) ? Color.white : tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y)); //reads pixel values of background and transfers to liz color
+                        liz.GetComponent<MeshRenderer>().material.color= liz.GetComponent<MeshRenderer>().material.color * (tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y)); //reads pixel values of background and transfers to liz color
+                        //liz.GetComponent<MeshRenderer>().material.mainTexture = tex;
+                        //Debug.Log(tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y));
+                        Debug.Log(liz.GetComponent<MeshRenderer>().material.color);
+                    }
+                    rb.gameObject.SetActive(false);
+
+                    attached = false;
+                }
             }
             
         }
