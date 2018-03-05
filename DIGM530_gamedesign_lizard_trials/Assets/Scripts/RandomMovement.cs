@@ -46,7 +46,7 @@ public class RandomMovement : MonoBehaviour
     void Update()
     {
 
-        randomDirection = new Vector3(Mathf.Sin(timeVar) * (rotationRange / 2) + baseDirection, 0, Mathf.Sin(timeVar) * (rotationRange / 2) + baseDirection); //   Moving at random angles 
+        randomDirection = new Vector3(0, Mathf.Sin(timeVar) * (rotationRange / 2) + baseDirection, 0); //   Moving at random angles 
         timeVar += step;
         speed = Random.Range(minSpeed, maxSpeed);              //      Change this range of numbers to change speed
         //GetComponent<Rigidbody>().AddForce(transform.up * speed);
