@@ -6,6 +6,7 @@ public class Balance : MonoBehaviour {
 
 	//public float translatespeed= 0.1f;
 	public float rotationSpeed = 10f;
+	
 
 	//public float rotation = 1000f;
 

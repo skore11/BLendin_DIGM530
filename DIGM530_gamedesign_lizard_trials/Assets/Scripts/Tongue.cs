@@ -24,7 +24,7 @@ public class Tongue : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("A")) {
             if (Physics.Raycast(liz.position, liz.forward, out hit))
             {
                 attached = true;
