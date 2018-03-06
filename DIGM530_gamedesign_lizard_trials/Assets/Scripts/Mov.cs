@@ -25,7 +25,7 @@ public class Mov : MonoBehaviour {
 	void Update() {
 
 
-        // balancefail = GameObject.Find("TailBalance").GetComponent<Balance>().balancefail;
+         //balancefail = GameObject.Find("TailBalance").GetComponent<Balance>().balancefail;
 
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
