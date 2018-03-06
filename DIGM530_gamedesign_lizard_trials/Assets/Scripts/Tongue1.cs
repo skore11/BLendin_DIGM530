@@ -14,9 +14,16 @@ public class Tongue1 : MonoBehaviour
     private float mouseposY;
     private Vector3 rayHitWorldPosition;
     public float speed;
-  private int rayRange = 100;
+  	private int rayRange = 100;
     public float step;
+	public AudioClip tongue;
 
+	private AudioSource source;
+
+
+	void Start(){
+		source = GetComponent<AudioSource>();
+	}
    
     // Use this for initialization
 
@@ -30,6 +37,7 @@ public class Tongue1 : MonoBehaviour
         {
             Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
             //Debug.Log(mousePosition);
+			source.PlayOneShot(tongue,1f);
             if (Physics.Raycast(liz.position,mousePosition, out hit, rayRange))
                 {
                 
@@ -42,17 +50,17 @@ public class Tongue1 : MonoBehaviour
                 
                // Debug.Log(rb.transform.position);
                 
-               
+
                 attached = true;
                
                 hit.rigidbody.isKinematic = true;//once raycast object hit is made kinematic
-
+			
             }
         }
         if (attached)//when ray is cast and attached to an object
         {
 
- 
+
             momentum += Time.deltaTime * speed;//builds up momentum of fly to be eaten 
             step = momentum * Time.deltaTime;
             hit.point = rb.transform.position;//assign the global position of rb.position the hit position hit.point
