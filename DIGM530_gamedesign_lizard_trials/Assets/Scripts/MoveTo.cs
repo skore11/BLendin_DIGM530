@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 public class MoveTo : MonoBehaviour {
@@ -10,11 +11,12 @@ public class MoveTo : MonoBehaviour {
 	public bool stayBack = false;
 	public float stayBackDist = 10f;
 	private NavMeshAgent myAgent;
+	public Text winGame;
 
 	// Use this for initialization
 	void Start () {
 		myAgent = GetComponent<NavMeshAgent> ();
-
+		winGame.text = "";
 
 	}
 	
@@ -38,6 +40,12 @@ public class MoveTo : MonoBehaviour {
 		else
 		{
 			myAgent.destination = target.position;
+		}
+	}
+
+	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "EndGame") {
+			winGame.text = "You WIN!!!!";	
 		}
 	}
 }
