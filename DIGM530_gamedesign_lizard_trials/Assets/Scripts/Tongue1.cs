@@ -18,11 +18,16 @@ public class Tongue1 : MonoBehaviour
     public float step;
 	public AudioClip tongue;
 
+    public string LizardColorString="Original";
+
 	private AudioSource source;
+    private Vector2 mousePos;
 
 
 	void Start(){
 		source = GetComponent<AudioSource>();
+
+
 	}
    
     // Use this for initialization
@@ -30,12 +35,20 @@ public class Tongue1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        mousePos=GameObject.Find("cursor").GetComponent<RectTransform>().anchoredPosition; 
+       
         
         //int mask = LayerMask.GetMask("fly");
-        if (Input.GetButtonDown("A"))
-        {
+        if (Input.GetButtonDown("Right Bumper"))
+
+        { 
+
             Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
+
+            //Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane));
+
+            Debug.Log(mousePosition);
+
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);
             if (Physics.Raycast(liz.position,mousePosition, out hit, rayRange))
@@ -43,7 +56,7 @@ public class Tongue1 : MonoBehaviour
                 
                 //Debug.DrawRay(liz.position, mousePosition, Color.green);
                 rayHitWorldPosition = hit.point;
-                Debug.Log("hit someshit" + rayHitWorldPosition);
+               // Debug.Log("hit someshit" + rayHitWorldPosition);
                 //mouseposY = hit.point.y;
                 //Debug.Log("hit someshit" + hit);
                 rb = hit.collider.gameObject;//assign our private rb the gameobject of raycasthit
@@ -75,9 +88,16 @@ public class Tongue1 : MonoBehaviour
             {
 				// we swallow the fly: disable fly, disable line, change color:
 				attached = false;
-				liz.GetComponent<MeshRenderer> ().material.color = rb.gameObject.GetComponent<MeshRenderer>().material.color;// get color of fly
-				lineRenderer.enabled = false;
+				liz.GetComponent<MeshRenderer>().material.color = rb.gameObject.GetComponent<MeshRenderer>().material.color;// get color of fly
+				 LizardColorString=rb.gameObject.tag;
+                 lineRenderer.enabled = false;
+
 				rb.gameObject.SetActive(false);
+               
+
+
+
+                Debug.Log(LizardColorString);
 
 				// MOVE THIS CODE TO WHERE YOU CHECK FOR DEATH FROM HAWK:
 				// different code for checking color of background:
@@ -86,16 +106,16 @@ public class Tongue1 : MonoBehaviour
                 {
                     //  liz.GetComponent<MeshRenderer>().material.color = rb.GetComponent<MeshRenderer>().material.color;
                     rb2 = hit2.collider.gameObject;
-                    Debug.Log("name of gameobject" + rb2);
+                   // Debug.Log("name of gameobject" + rb2);
                     Renderer rend = rb2.GetComponent<MeshRenderer>();
                     if (rend != null)
                     {
                         Texture2D tex = (Texture2D)rend.material.mainTexture;
-                        Debug.Log(rend.material.color);
+                       // Debug.Log(rend.material.color);
                         //liz.GetComponent<MeshRenderer>().material.color = rend.material.color * ((tex == null) ? Color.white : tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y)); //reads pixel values of background and transfers to liz color
 						Color color = tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y);
-						Debug.Log("Pixel color:" + color);
-						Debug.Log(liz.GetComponent<MeshRenderer>().material.color);
+						//Debug.Log("Pixel color:" + color);
+						//Debug.Log(liz.GetComponent<MeshRenderer>().material.color);
 						//TODO: now check if the colors of us and this one are close enough!
                     }
 
@@ -108,16 +128,16 @@ public class Tongue1 : MonoBehaviour
 			Vector3 left = liz.transform.TransformDirection(Vector3.left);
 			if (Physics.Raycast (liz.position, left, out hit2)) {
 				rb2 = hit2.collider.gameObject;
-				Debug.Log ("name of gameobject" + rb2);
+				//Debug.Log ("name of gameobject" + rb2);
 				Renderer rend = rb2.GetComponent<MeshRenderer> ();
 				if (rend != null) {
 					Texture2D tex = (Texture2D)rend.material.mainTexture;
-					Debug.Log (rend.material.color);
+					//Debug.Log (rend.material.color);
 					Vector2 pixelUV = hit2.textureCoord;
 					int x = (int) (pixelUV.x * tex.width);
 					int y = (int) (pixelUV.y * tex.height);
 					Color color = tex.GetPixel (x, y);
-					Debug.Log ("Pixel color:" + color + " at uv-coord " + x + "," + y + " (pixel " + pixelUV + ")");
+					//Debug.Log ("Pixel color:" + color + " at uv-coord " + x + "," + y + " (pixel " + pixelUV + ")");
 				}
 			}
 		}

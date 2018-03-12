@@ -35,8 +35,8 @@ public class Crosshair : MonoBehaviour {
        float speedx = Screen.width;
         float speedy = Screen.height;
       
-        var x =Input.GetAxis("RightJoystickX") * speedx;
-        var y=Input.GetAxis("RightJoystickY") * speedy;
+        float x =Input.GetAxis("RightJoystickX") * speedx;
+        float y=Input.GetAxis("RightJoystickY") * speedy;
 
         //print (x);
         //print (y);
