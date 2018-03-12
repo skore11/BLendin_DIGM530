@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+
 
 public class CountDown : MonoBehaviour {
 
-	public float timeLeft=6.0f;
+	public float timeLeft=9.0f;
 	public bool catchObject=false;
-	private int message=0;
-	private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
+	private int message=3;
+	//private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
 
+    private Color purplecolor = new Color32( 0x64, 0x44, 0xE7, 0xFF );
 	//public bool showwarning;
 	//private int countdown=6;
 
 	// Use this for initialization
 	void Start () {
 
-		
+		 message=0;
+		  timeLeft = 9.0f;
 
 	}
 	
@@ -27,47 +31,57 @@ public class CountDown : MonoBehaviour {
    
 
     //showwarning = GameObject.Find("TailBalance").GetComponent<Balance>().balancefail;
-   message = Random.Range(1,3);
+
 
 
 	timeLeft -= Time.deltaTime;
 
-	if (5.0f<=timeLeft && timeLeft<6.0f) 
+	if (8.0f<=timeLeft && timeLeft<9.0f) 
 
 	{
 		    catchObject=false;
 		    GameObject.Find("countdown").GetComponent<Text>().text ="5s";}
 
-    if (4.0f<=timeLeft && timeLeft<5.0f) 
+    if (7.0f<=timeLeft && timeLeft<8.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="4s";}
 
-	 if (3.0f<=timeLeft && timeLeft<4.0f) 
+	 if (6.0f<=timeLeft && timeLeft<7.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="3s";}
 
 
-	 if (2.0f<=timeLeft && timeLeft<3.0f) 
+	 if (5.0f<=timeLeft && timeLeft<6.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="2s";}
 
 
 
-	 if (1.0f<=timeLeft && timeLeft<2.0f) 
+	 if (4.0f<=timeLeft && timeLeft<5.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="1s";}
 
 
 
-	if (0.0f<=timeLeft && timeLeft<1.0f) 
+	if (0.0f<=timeLeft && timeLeft<4.0f) 
 
-	{
+	{    
+		if(message==0)
+		GameObject.Find("countdown").GetComponent<Text>().color=Color.red;
+		else if(message==1)
+		GameObject.Find("countdown").GetComponent<Text>().color=Color.yellow;
+		else if(message==2)
+		GameObject.Find("countdown").GetComponent<Text>().color=purplecolor;
+
+        //Debug.Log(GameObject.Find("countdown").GetComponent<Text>().color);
 
         //string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
 
-		GameObject.Find("countdown").GetComponent<Text>().text =texts[message];
+		GameObject.Find("countdown").GetComponent<Text>().text ="Catch!";
 
-     catchObject=true;
+
+
+        catchObject=true;
 }
 
 
@@ -79,8 +93,11 @@ public class CountDown : MonoBehaviour {
          //StartCoroutine(Example());
         // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
-         timeLeft = 10.0f;
-     
+         timeLeft = 9.0f;
+
+         GameObject.Find("countdown").GetComponent<Text>().color=Color.white;
+          message = Random.Range(0,3);
+          Debug.Log(message);
      }
 
 
