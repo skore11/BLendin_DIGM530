@@ -14,7 +14,7 @@ public class Tongue1 : MonoBehaviour
     private float mouseposY;
     private Vector3 rayHitWorldPosition;
     public float speed;
-  	private int rayRange = 100;
+  	//private int rayRange = 20;
     public float step;
 	public AudioClip tongue;
 
@@ -41,17 +41,17 @@ public class Tongue1 : MonoBehaviour
         //int mask = LayerMask.GetMask("fly");
         if (Input.GetButtonDown("Right Bumper"))
 
-        { 
+        {  Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(mousePos).y, Camera.main.ScreenToWorldPoint(mousePos).z);
 
-            Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
+           // Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
 
-            //Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane));
+           // Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3( Camera.main.nearClipPlane,mousePos.y,mousePos.x));
 
             Debug.Log(mousePosition);
 
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);
-            if (Physics.Raycast(liz.position,mousePosition, out hit, rayRange))
+            if (Physics.Raycast(liz.position,mousePosition, out hit))
                 {
                 
                 //Debug.DrawRay(liz.position, mousePosition, Color.green);
@@ -63,7 +63,6 @@ public class Tongue1 : MonoBehaviour
                 
                // Debug.Log(rb.transform.position);
                 
-
                 attached = true;
                
                 hit.rigidbody.isKinematic = true;//once raycast object hit is made kinematic

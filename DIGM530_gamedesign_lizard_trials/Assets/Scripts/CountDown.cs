@@ -13,14 +13,14 @@ public class CountDown : MonoBehaviour {
 	//private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
 
     private Color purplecolor = new Color32( 0x64, 0x44, 0xE7, 0xFF );
-   // private Color CheckYellow = new Color(0.934F, 0.910F, 0.076F, 1.000F);
+  //  private Color CheckYellow = new Color(0.934F, 0.910F, 0.076F, 1.000F);
    // private Color CheckPurple = new Color(0.394F, 0.266F, 0.904F, 1.000F);
-  //  private Color CheckRed = new Color(0.956F, 0.035F, 0.035F, 1.000F);
-   // private Color LizardColor=new Color();
+  // private Color CheckRed = new Color(0.956F, 0.035F, 0.035F, 1.000F);
+   //private Color LizardColor=new Color();
 
   // private float CheckRedR=0.956F;
-  // private float CheckPurpleR=0.394F;
- //  private float CheckYellowR=0.934F;
+ //  private float CheckPurpleR=0.394F;
+   //private float CheckYellowR=0.934F;
 	//public bool showwarning;
 	//private int countdown=6;
 
@@ -104,8 +104,10 @@ public class CountDown : MonoBehaviour {
          if(message==0)
            { if(s=="Red")
            	 Debug.Log("Good!");
+
            	 else
            	 Debug.Log("Bad!");
+           //  Debug.Log(LizardColor.a+"dsfsd"+CheckRedR);
            	 //Application.LoadLevel("BetatrialV1");}
            }  
 
@@ -115,6 +117,7 @@ public class CountDown : MonoBehaviour {
            	 Debug.Log("Good!");
            	 else
            	 Debug.Log("Bad!");
+            // Debug.Log(LizardColor.a+"dsfsd"+CheckYellowR);
            	 //Application.LoadLevel("BetatrialV1");}
 
            }  
@@ -125,6 +128,7 @@ public class CountDown : MonoBehaviour {
            	 Debug.Log("Good!");
            	 else
            	  Debug.Log("Bad!");
+             // Debug.Log(LizardColor.a+"dsfsd"+CheckPurpleR);
            	  //Application.LoadLevel("BetatrialV1");}
 
            }  
