@@ -18,6 +18,8 @@ public class Tongue1 : MonoBehaviour
     public float step;
 	public AudioClip tongue;
 
+    public string LizardColorString="Original";
+
 	private AudioSource source;
     private Vector2 mousePos;
 
@@ -86,9 +88,16 @@ public class Tongue1 : MonoBehaviour
             {
 				// we swallow the fly: disable fly, disable line, change color:
 				attached = false;
-				liz.GetComponent<MeshRenderer> ().material.color = rb.gameObject.GetComponent<MeshRenderer>().material.color;// get color of fly
-				lineRenderer.enabled = false;
+				liz.GetComponent<MeshRenderer>().material.color = rb.gameObject.GetComponent<MeshRenderer>().material.color;// get color of fly
+				 LizardColorString=rb.gameObject.tag;
+                 lineRenderer.enabled = false;
+
 				rb.gameObject.SetActive(false);
+               
+
+
+
+                Debug.Log(LizardColorString);
 
 				// MOVE THIS CODE TO WHERE YOU CHECK FOR DEATH FROM HAWK:
 				// different code for checking color of background:

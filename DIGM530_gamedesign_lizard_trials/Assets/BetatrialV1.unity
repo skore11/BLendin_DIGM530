@@ -425,7 +425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4561496085870952, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 36.788754
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 4561496085870952, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -450,6 +450,10 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
@@ -583,6 +587,10 @@ Prefab:
       propertyPath: m_Name
       value: fly_lowpoly 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
   m_IsPrefabParent: 0
@@ -628,6 +636,10 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
@@ -709,6 +721,10 @@ Prefab:
       propertyPath: m_Name
       value: fly_lowpoly 1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
   m_IsPrefabParent: 0
@@ -754,6 +770,15 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 95677631990602226, guid: 474bd94b738c34c8b99800dbdf4c54f7,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
@@ -1107,7 +1132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4561496085870952, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 33.13
+      value: 19.78
       objectReference: {fileID: 0}
     - target: {fileID: 4561496085870952, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1132,6 +1157,10 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
@@ -1178,6 +1207,10 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
@@ -1306,6 +1339,10 @@ Prefab:
     - target: {fileID: 4561496085870952, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
@@ -1662,6 +1699,10 @@ Prefab:
     - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
       propertyPath: m_Name
       value: fly_lowpoly 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
@@ -2546,6 +2587,10 @@ Prefab:
       propertyPath: m_Name
       value: fly_lowpoly 1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
+      propertyPath: m_TagString
+      value: Purple
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c664cf818c5cc4d2aa6cf9f8079d2932, type: 2}
   m_IsPrefabParent: 0
@@ -2922,6 +2967,7 @@ MonoBehaviour:
   speed: 1
   step: 1
   tongue: {fileID: 8300000, guid: 9e4df666b9d8c4970bfbb06f85f99d30, type: 3}
+  LizardColorString: Original
 --- !u!82 &1441129198
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3204,6 +3250,10 @@ Prefab:
       propertyPath: m_Name
       value: fly_lowpoly 2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
   m_IsPrefabParent: 0
@@ -3332,6 +3382,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: fa2b0e18f570440089b27f0ed88af070, type: 2}
+      propertyPath: m_TagString
+      value: Red
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa2b0e18f570440089b27f0ed88af070, type: 2}
   m_IsPrefabParent: 0
@@ -3355,6 +3409,7 @@ MonoBehaviour:
   speed: 1
   step: 1
   tongue: {fileID: 8300000, guid: 9e4df666b9d8c4970bfbb06f85f99d30, type: 3}
+  LizardColorString: Original
 --- !u!4 &1601229793 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400030, guid: 3d0a4806fde04ff44b5cb05f5975838f, type: 3}
@@ -4378,6 +4433,10 @@ Prefab:
       propertyPath: m_Name
       value: fly_lowpoly 2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
   m_IsPrefabParent: 0
@@ -4419,6 +4478,10 @@ Prefab:
     - target: {fileID: 4561496085870952, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413061248178704, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
+      propertyPath: m_TagString
+      value: Yellow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474bd94b738c34c8b99800dbdf4c54f7, type: 2}
