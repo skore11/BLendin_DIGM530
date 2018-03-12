@@ -14,7 +14,7 @@ public class Tongue1 : MonoBehaviour
     private float mouseposY;
     private Vector3 rayHitWorldPosition;
     public float speed;
-  	private int rayRange = 100;
+//  	private int rayRange = 100;
     public float step;
 	public AudioClip tongue;
 
@@ -51,7 +51,7 @@ public class Tongue1 : MonoBehaviour
 
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);
-            if (Physics.Raycast(liz.position,mousePosition, out hit, rayRange))
+            if (Physics.Raycast(liz.position,mousePosition, out hit))
                 {
                 
                 //Debug.DrawRay(liz.position, mousePosition, Color.green);
