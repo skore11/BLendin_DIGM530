@@ -57,7 +57,7 @@ public class BalanceFail : MonoBehaviour {
 
 	{//failtext.text= "You failed!";
 
-Application.LoadLevel("BetatrialV1");}
+Application.LoadLevel("BetatrialV3");}
 
     }
 

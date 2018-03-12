@@ -18,7 +18,8 @@ public class Vision : MonoBehaviour {
 	private float t=0;
 	public  float timeToReachTarget=5.0f;
 
-    public float offset =-50.0f;
+    public float offsetx =-50.0f;
+     public float offsety =-50.0f;
     private Color oColor;
 
     private Color nColor;
@@ -76,10 +77,11 @@ public class Vision : MonoBehaviour {
      visionimg.GetComponent<RectTransform>().anchoredPosition =StartPosion;
 	 Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, lizard.position);
      EndPosition = screenPoint - canvasRectT.sizeDelta / 2f ;
-     EndPosition.x+=offset;
-     EndPosition.y+=Screen.height;
+     EndPosition.x+=offsetx;
+     EndPosition.y+=offsety;
+    // EndPosition.y+=Screen.height;
 
-	 t += Time.deltaTime/timeToReachTarget;
+	    t += Time.deltaTime/timeToReachTarget;
 		
      visionimg.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp (StartPosion,EndPosition,t);
    //  visionimg.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp (EndPosition,StartPosion,t);
@@ -87,19 +89,6 @@ public class Vision : MonoBehaviour {
     }
 
 
-    void ReCatchVersion(){
-     CurrentPosition=visionimg.GetComponent<RectTransform>().anchoredPosition ;
-	 Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, lizard.position);
-     EndPosition = screenPoint - canvasRectT.sizeDelta / 2f ;
-    EndPosition.x+=offset;
-     EndPosition.y+=Screen.height;
-
-	t += Time.deltaTime/timeToReachTarget;
-		
-    // visionimg.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp (StartPosion,EndPosition,t);
-    visionimg.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp (CurrentPosition,StartPosion,t);
-
-    }
 
 
 	 void lerpAlpha(){	

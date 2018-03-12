@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/BetatrialV1.unity
     guid: 43e4f94cf14e475498a4922db6ce8126
+  - enabled: 1
+    path: Assets/BetatrialV3.unity
+    guid: 85cf753d2effa46ccadbcaf44f0ff5fa

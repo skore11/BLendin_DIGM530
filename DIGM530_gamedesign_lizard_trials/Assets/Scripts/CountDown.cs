@@ -7,7 +7,7 @@ using UnityEditor;
 
 public class CountDown : MonoBehaviour {
 
-	public float timeLeft=9.0f;
+	public float timeLeft=5.0f;
 	public bool catchObject=false;
 	private int message=3;
 	//private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
@@ -16,7 +16,7 @@ public class CountDown : MonoBehaviour {
   //  private Color CheckYellow = new Color(0.934F, 0.910F, 0.076F, 1.000F);
    // private Color CheckPurple = new Color(0.394F, 0.266F, 0.904F, 1.000F);
   // private Color CheckRed = new Color(0.956F, 0.035F, 0.035F, 1.000F);
-   //private Color LizardColor=new Color();
+   private Color LizardColor=new Color();
 
   // private float CheckRedR=0.956F;
  //  private float CheckPurpleR=0.394F;
@@ -30,7 +30,7 @@ public class CountDown : MonoBehaviour {
 	void Start () {
 
 		 message=0;
-		  timeLeft = 9.0f;
+		  timeLeft = 5.0f;
 		  
 
 	}
@@ -47,42 +47,37 @@ public class CountDown : MonoBehaviour {
 
 	timeLeft -= Time.deltaTime;
 
-	if (8.0f<=timeLeft && timeLeft<9.0f) 
+	if (4.0f<=timeLeft && timeLeft<5.0f) 
 
 	{
 		    catchObject=false;
 		    GameObject.Find("countdown").GetComponent<Text>().text ="5s";}
 
-    if (7.0f<=timeLeft && timeLeft<8.0f) 
+    if (3.0f<=timeLeft && timeLeft<4.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="4s";}
 
-	 if (6.0f<=timeLeft && timeLeft<7.0f) 
+	 if (2.0f<=timeLeft && timeLeft<3.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="3s";}
 
 
-	 if (5.0f<=timeLeft && timeLeft<6.0f) 
+	 if (1.0f<=timeLeft && timeLeft<2.0f) 
 
 	{GameObject.Find("countdown").GetComponent<Text>().text ="2s";}
 
 
 
-	 if (4.0f<=timeLeft && timeLeft<5.0f) 
 
-	{GameObject.Find("countdown").GetComponent<Text>().text ="1s";}
-
-
-
-	if (0.0f<=timeLeft && timeLeft<4.0f) 
+	if (0.0f<=timeLeft && timeLeft<1.0f) 
 
 	{    
-		if(message==0)
-		GameObject.Find("countdown").GetComponent<Text>().color=Color.red;
-		else if(message==1)
-		GameObject.Find("countdown").GetComponent<Text>().color=Color.yellow;
-		else if(message==2)
-		GameObject.Find("countdown").GetComponent<Text>().color=purplecolor;
+		//if(message==0)
+	//	GameObject.Find("countdown").GetComponent<Text>().color=Color.red;
+	//	else if(message==1)
+	//	GameObject.Find("countdown").GetComponent<Text>().color=Color.yellow;
+		//else if(message==2)
+		//GameObject.Find("countdown").GetComponent<Text>().color=purplecolor;
 
         //Debug.Log(GameObject.Find("countdown").GetComponent<Text>().color);
 
@@ -99,48 +94,74 @@ public class CountDown : MonoBehaviour {
 
     if ( timeLeft <= 0 )
      {
-         //LizardColor=GameObject.Find("Lizard").GetComponent<MeshRenderer>().material.color;
-         s=GameObject.Find("Lizard").GetComponent<Tongue1>().LizardColorString;
-         if(message==0)
-           { if(s=="Red")
-           	 Debug.Log("Good!");
 
-           	 else
-           	 Debug.Log("Bad!");
+
+
+         LizardColor=GameObject.Find("Lizard").GetComponent<MeshRenderer>().material.color;
+         Debug.Log("lizard"+LizardColor.r+LizardColor.b+LizardColor.g);
+         
+
+
+        Color bbcolor=GameObject.Find("Lizard").GetComponent<Tongue1>().BackgroundColor;
+        Debug.Log("background"+bbcolor.r+bbcolor.b+bbcolor.g);
+
+      
+
+        if(Mathf.Approximately(LizardColor.r,bbcolor.r))
+         {  Debug.Log("r");
+
+          if(Mathf.Approximately(LizardColor.b,bbcolor.b))
+             
+             { Debug.Log("b");
+              if(Mathf.Approximately(LizardColor.g,bbcolor.g))
+                  {Debug.Log("GOOD!");}
+                }
+
+          }        
+        else
+        Debug.Log("Die!!");
+
+        // s=GameObject.Find("Lizard").GetComponent<Tongue1>().LizardColorString;
+        // if(message==0)
+         //  { if(s=="Red")
+         //  	 Debug.Log("Good!");
+
+         //  	 else
+        //   	 {Debug.Log("Bad!");}
            //  Debug.Log(LizardColor.a+"dsfsd"+CheckRedR);
-           	 //Application.LoadLevel("BetatrialV1");}
-           }  
+           	 //Application.LoadLevel("BetatrialV3");}
+          // }  
 
 
-          else if(message==1)
-           { if(s=="Yellow")
-           	 Debug.Log("Good!");
-           	 else
-           	 Debug.Log("Bad!");
+          //else if(message==1)
+         //  { if(s=="Yellow")
+         //  	 Debug.Log("Good!");
+          // 	 else
+           //	 {Debug.Log("Bad!");}
             // Debug.Log(LizardColor.a+"dsfsd"+CheckYellowR);
-           	 //Application.LoadLevel("BetatrialV1");}
+           	 //Application.LoadLevel("BetatrialV3");}
 
-           }  
+          // }  
 
 
-            else if(message==2)
-           { if(s=="Purple")
-           	 Debug.Log("Good!");
-           	 else
-           	  Debug.Log("Bad!");
+          //  else if(message==2)
+          // { if(s=="Purple")
+          // 	 Debug.Log("Good!");
+          // 	 else
+           //	  {Debug.Log("Bad!");}
              // Debug.Log(LizardColor.a+"dsfsd"+CheckPurpleR);
-           	  //Application.LoadLevel("BetatrialV1");}
+           	  //Application.LoadLevel("BetatrialV3");}
 
-           }  
+          // }  
          //StartCoroutine(Example());
         // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
 
-         timeLeft = 9.0f;
+         timeLeft = 5.0f;
 
-         GameObject.Find("countdown").GetComponent<Text>().color=Color.white;
-          message = Random.Range(0,3);
-          Debug.Log(message);
+         //GameObject.Find("countdown").GetComponent<Text>().color=Color.white;
+         // message = Random.Range(0,3);
+        //  Debug.Log(message);
      }
 
 

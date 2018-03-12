@@ -18,6 +18,7 @@ public class Tongue1 : MonoBehaviour
     public float step;
 	public AudioClip tongue;
 
+    public Color BackgroundColor;
     public string LizardColorString="Original";
 
 	private AudioSource source;
@@ -35,6 +36,7 @@ public class Tongue1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckBackgroundColor();
         mousePos=GameObject.Find("cursor").GetComponent<RectTransform>().anchoredPosition; 
        
         
@@ -47,7 +49,7 @@ public class Tongue1 : MonoBehaviour
 
            // Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3( Camera.main.nearClipPlane,mousePos.y,mousePos.x));
 
-            Debug.Log(mousePosition);
+            //Debug.Log(mousePosition);
 
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);
@@ -83,7 +85,7 @@ public class Tongue1 : MonoBehaviour
             lineRenderer.SetVertexCount(2);
             lineRenderer.SetPosition(0, liz.position);
             lineRenderer.SetPosition(1, rb.transform.position);
-            if (Vector3.Distance(liz.transform.position, rb.transform.position) <= 1)
+            if (Vector3.Distance(liz.transform.position, rb.transform.position) <= 3)
             {
 				// we swallow the fly: disable fly, disable line, change color:
 				attached = false;
@@ -96,54 +98,33 @@ public class Tongue1 : MonoBehaviour
 
 
 
-                Debug.Log(LizardColorString);
-
-				// MOVE THIS CODE TO WHERE YOU CHECK FOR DEATH FROM HAWK:
-				// different code for checking color of background:
-                Vector3 left = liz.transform.TransformDirection(Vector3.left);
-                if (Physics.Raycast(liz.position, left, out hit2))
-                {
-                    //  liz.GetComponent<MeshRenderer>().material.color = rb.GetComponent<MeshRenderer>().material.color;
-                    rb2 = hit2.collider.gameObject;
-                   // Debug.Log("name of gameobject" + rb2);
-                    Renderer rend = rb2.GetComponent<MeshRenderer>();
-                    if (rend != null)
-                    {
-                        Texture2D tex = (Texture2D)rend.material.mainTexture;
-                       // Debug.Log(rend.material.color);
-                        //liz.GetComponent<MeshRenderer>().material.color = rend.material.color * ((tex == null) ? Color.white : tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y)); //reads pixel values of background and transfers to liz color
-						Color color = tex.GetPixel((int)hit2.textureCoord.x, (int)hit2.textureCoord.y);
-						//Debug.Log("Pixel color:" + color);
-						//Debug.Log(liz.GetComponent<MeshRenderer>().material.color);
-						//TODO: now check if the colors of us and this one are close enough!
-                    }
-
-                }
+               // Debug.Log(LizardColorString);
+               
             }
             
         }
-
-		if (true) { // debugging
-			Vector3 left = liz.transform.TransformDirection(Vector3.left);
-			if (Physics.Raycast (liz.position, left, out hit2)) {
-				rb2 = hit2.collider.gameObject;
-				//Debug.Log ("name of gameobject" + rb2);
-				Renderer rend = rb2.GetComponent<MeshRenderer> ();
-				if (rend != null) {
-					Texture2D tex = (Texture2D)rend.material.mainTexture;
-					//Debug.Log (rend.material.color);
-					Vector2 pixelUV = hit2.textureCoord;
-					int x = (int) (pixelUV.x * tex.width);
-					int y = (int) (pixelUV.y * tex.height);
-					Color color = tex.GetPixel (x, y);
-					//Debug.Log ("Pixel color:" + color + " at uv-coord " + x + "," + y + " (pixel " + pixelUV + ")");
-				}
-			}
-		}
     }
-   
+		void  CheckBackgroundColor(){
+       Vector3 left = liz.transform.TransformDirection(Vector3.left);
+       if (Physics.Raycast (liz.position, left, out hit2)) {
+                rb2 = hit2.collider.gameObject;
+               // Debug.Log ("name of gameobject" + rb2);
+                Renderer rend = rb2.GetComponent<MeshRenderer> ();
+                if (rend != null) {
+                    Texture2D tex = (Texture2D)rend.material.mainTexture;
+                    //Debug.Log (rend.material.color);
+                    Vector2 pixelUV = hit2.textureCoord;
+                    int x = (int) (pixelUV.x * tex.width);
+                    int y = (int) (pixelUV.y * tex.height);
+                    //Color color = tex.GetPixel (x, y);
+                    BackgroundColor=tex.GetPixel (x, y);
 
+                   // Debug.Log ("Pixel color:" + color + " at uv-coord " + x + "," + y + " (pixel " + pixelUV + ")");
+		      }
+    
+       }
 
+    }
 }
 
 
