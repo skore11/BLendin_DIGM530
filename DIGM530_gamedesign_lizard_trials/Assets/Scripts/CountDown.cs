@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
 
-	public float timeLeft=10.0f;
+	public float timeLeft=6.0f;
+	public bool catchObject=false;
+	private int message=0;
+	private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
 
 	//public bool showwarning;
 	//private int countdown=6;
@@ -13,23 +16,27 @@ public class CountDown : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 	//GameObject.Find("countdown").GetComponent<Text>().text = timeLeft+ "s";	
-
+   
 
     //showwarning = GameObject.Find("TailBalance").GetComponent<Balance>().balancefail;
-
+   message = Random.Range(1,3);
 
 
 	timeLeft -= Time.deltaTime;
 
 	if (5.0f<=timeLeft && timeLeft<6.0f) 
 
-	{GameObject.Find("countdown").GetComponent<Text>().text ="5s";}
+	{
+		    catchObject=false;
+		    GameObject.Find("countdown").GetComponent<Text>().text ="5s";}
 
     if (4.0f<=timeLeft && timeLeft<5.0f) 
 
@@ -54,7 +61,14 @@ public class CountDown : MonoBehaviour {
 
 	if (0.0f<=timeLeft && timeLeft<1.0f) 
 
-	{GameObject.Find("countdown").GetComponent<Text>().text ="Catch!";}
+	{
+
+        //string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
+
+		GameObject.Find("countdown").GetComponent<Text>().text =texts[message];
+
+     catchObject=true;
+}
 
 
 
@@ -66,6 +80,7 @@ public class CountDown : MonoBehaviour {
         // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
          timeLeft = 10.0f;
+     
      }
 
 
