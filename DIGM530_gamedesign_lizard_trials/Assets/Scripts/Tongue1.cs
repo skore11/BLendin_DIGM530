@@ -14,11 +14,7 @@ public class Tongue1 : MonoBehaviour
     private float mouseposY;
     private Vector3 rayHitWorldPosition;
     public float speed;
-<<<<<<< HEAD
   	//private int rayRange = 20;
-=======
-//  	private int rayRange = 100;
->>>>>>> c81779efc7a13fd3e7e79f0e9455a23f70eb4b3e
     public float step;
 	public AudioClip tongue;
 
