@@ -4594,10 +4594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4794dded313466f429de72e24a410a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liz: {fileID: 0}
-  momentum: 0
-  speed: 0
-  step: 0
+  liz: {fileID: 1601229793}
+  momentum: 1
+  speed: 1
+  step: 1
   tongue: {fileID: 0}
   BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
   LizardColorString: Original
@@ -4900,7 +4900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2dd67e5b6fe40c5bae8bb766c3e59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 103817160}
   stayBack: 0
   stayBackDist: 10
   winGame: {fileID: 0}
@@ -5864,7 +5864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 5
-  catchObject: 0
+  catchObject: 1
 --- !u!114 &1842379582
 MonoBehaviour:
   m_ObjectHideFlags: 0
