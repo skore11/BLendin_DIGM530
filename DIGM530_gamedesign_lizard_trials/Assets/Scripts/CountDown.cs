@@ -111,9 +111,20 @@ public class CountDown : MonoBehaviour {
             Color bbcolor = GameObject.Find("Lizard").GetComponent<Tongue1>().BackgroundColor;
             Debug.Log("background" + bbcolor.r + bbcolor.b + bbcolor.g);
 
+            float r = Mathf.Abs(LizardColor.r - bbcolor.r);
+            float b = Mathf.Abs(LizardColor.b - bbcolor.b);
+            float g = Mathf.Abs(LizardColor.g - bbcolor.g);
+            Debug.Log("r:" + r + "b:" + b + "g:" + g);
 
+            float check = 0.5f;
+            if (r <= check)
+                Debug.Log("color red are similar");
+            if (b <= check)
+                Debug.Log("color blue are similar");
+            if (g <= check)
+                Debug.Log("color green is similar");
 
-            if (Mathf.Approximately(LizardColor.r, bbcolor.r))
+            /*if (Mathf.Approximately(LizardColor.r, bbcolor.r))
             { Debug.Log("r");
 
                 if (Mathf.Approximately(LizardColor.b, bbcolor.b))
@@ -125,7 +136,7 @@ public class CountDown : MonoBehaviour {
 
             }
             else
-                Debug.Log("Die!!");
+                Debug.Log("Die!!");*/
 
             // s=GameObject.Find("Lizard").GetComponent<Tongue1>().LizardColorString;
             // if(message==0)
