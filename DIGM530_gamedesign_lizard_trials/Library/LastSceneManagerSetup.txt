@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/GoldScene.unity
+- path: Assets/GoldSceneV2.unity
   isLoaded: 1
   isActive: 1
