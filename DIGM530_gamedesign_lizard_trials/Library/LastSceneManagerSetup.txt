@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BetatrialV3.unity
+- path: Assets/GoldScene.unity
   isLoaded: 1
   isActive: 1

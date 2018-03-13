@@ -23,12 +23,12 @@ public class BalanceFail : MonoBehaviour {
 
     if (balancefail)
     {
-    GetComponent<Mov>().enabled=false;
-    GetComponent<Tongue1>().enabled=false;
+        GetComponent<Mov>().enabled=false;
+        GetComponent<Tongue1>().enabled=false;
 
     //failtext.text= "You have 5 sencond to back to Balance!";
 
-    timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime;
 
 //	if (5.0f<=timeLeft && timeLeft<6.0f) 
 
@@ -57,18 +57,22 @@ public class BalanceFail : MonoBehaviour {
 
 	{//failtext.text= "You failed!";
 
-Application.LoadLevel("BetatrialV3");}
+       //Application.LoadLevel("GoldScene");}
+
+	   Debug.Log("Balance Failed!");
+
+	 }  
 
     }
 
     else
     {
-     GetComponent<Mov>().enabled=true;
-     GetComponent<Tongue1>().enabled=true;
-     timeLeft=5.0f;
+        GetComponent<Mov>().enabled=true;
+        GetComponent<Tongue1>().enabled=true;
+       timeLeft=5.0f;
      //failtext.text= "";
 
- }
+    }
 
    
 

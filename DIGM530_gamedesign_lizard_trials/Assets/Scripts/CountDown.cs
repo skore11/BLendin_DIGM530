@@ -7,7 +7,7 @@ using UnityEditor;
 
 public class CountDown : MonoBehaviour {
 
-    public float timeLeft = 5.0f;
+    public float timeLeft = 10.0f;
     public bool catchObject = false;
     private int message = 3;
     //private  string[] texts = new string[]{"Red!", "Purple!", "Yellow!"};
@@ -35,7 +35,8 @@ public class CountDown : MonoBehaviour {
     void Start() {
 
         message = 0;
-        timeLeft = 5.0f;
+        timeLeft = 10.0f;
+        GameObject.Find("countdown").GetComponent<Text>().text = ""; 
 
 
     }
@@ -52,29 +53,29 @@ public class CountDown : MonoBehaviour {
 
         timeLeft -= Time.deltaTime;
 
-        if (4.0f <= timeLeft && timeLeft < 5.0f)
+        if (9.0f <= timeLeft && timeLeft < 10.0f)
 
         {
             catchObject = false;
             GameObject.Find("countdown").GetComponent<Text>().text = "5s"; }
 
-        if (3.0f <= timeLeft && timeLeft < 4.0f)
+        if (8.0f <= timeLeft && timeLeft < 9.0f)
 
         { GameObject.Find("countdown").GetComponent<Text>().text = "4s"; }
 
-        if (2.0f <= timeLeft && timeLeft < 3.0f)
+        if (7.0f <= timeLeft && timeLeft < 8.0f)
 
         { GameObject.Find("countdown").GetComponent<Text>().text = "3s"; }
 
 
-        if (1.0f <= timeLeft && timeLeft < 2.0f)
+        if (6.0f <= timeLeft && timeLeft < 7.0f)
 
         { GameObject.Find("countdown").GetComponent<Text>().text = "2s"; }
 
 
 
 
-        if (0.0f <= timeLeft && timeLeft < 1.0f)
+        if (0.0f <= timeLeft && timeLeft < 6.0f)
 
         {
             //if(message==0)
@@ -104,26 +105,37 @@ public class CountDown : MonoBehaviour {
 
 
             LizardColor = GameObject.Find("Lizard").GetComponent<MeshRenderer>().material.color;
-            Debug.Log("lizard" + LizardColor.r + LizardColor.b + LizardColor.g);
+            //Debug.Log("lizard" + LizardColor.r + LizardColor.b + LizardColor.g);
 
 
 
             Color bbcolor = GameObject.Find("Lizard").GetComponent<Tongue1>().BackgroundColor;
-            Debug.Log("background" + bbcolor.r + bbcolor.b + bbcolor.g);
+            //Debug.Log("background" + bbcolor.r + bbcolor.b + bbcolor.g);
 
             float r = Mathf.Abs(LizardColor.r - bbcolor.r);
             float b = Mathf.Abs(LizardColor.b - bbcolor.b);
             float g = Mathf.Abs(LizardColor.g - bbcolor.g);
-            Debug.Log("r:" + r + "b:" + b + "g:" + g);
+            //Debug.Log("r:" + r + "b:" + b + "g:" + g);
 
             float check = 0.5f;
             if (r <= check)
-                Debug.Log("color red are similar");
-            if (b <= check)
-                Debug.Log("color blue are similar");
-            if (g <= check)
-                Debug.Log("color green is similar");
-
+               // Debug.Log("color red are similar");
+            { if (b <= check)
+              //  Debug.Log("color blue are similar");
+                 {if (g <= check)
+                    Debug.Log("Good!");
+                   else
+                    {Debug.Log("g not match");
+                    Application.LoadLevel("GoldScene"); }
+                 }
+              else   
+             { Debug.Log("b not match");
+            Application.LoadLevel("GoldScene");}
+               
+            }
+            else
+           { Debug.Log("r not match");
+            Application.LoadLevel("GoldScene");}
             /*if (Mathf.Approximately(LizardColor.r, bbcolor.r))
             { Debug.Log("r");
 
@@ -159,24 +171,26 @@ public class CountDown : MonoBehaviour {
             //Application.LoadLevel("BetatrialV3");}
             //=======
             //LizardColor=GameObject.Find("Lizard").GetComponent<MeshRenderer>().material.color;
-            s = GameObject.Find("Lizard").GetComponent<Tongue1>().LizardColorString;
-            if (message == 0)
-            {
-                if (s == "Red")
-                    Debug.Log("Good!");
-                else
-                    Debug.Log("Bad!");
+
+                //Jiachi's idea
+          //  s = GameObject.Find("Lizard").GetComponent<Tongue1>().LizardColorString;
+          //  if (message == 0)
+           // {
+             //   if (s == "Red")
+              //      Debug.Log("Good!");
+               // else
+                //    Debug.Log("Bad!");
                 //Application.LoadLevel("BetatrialV1");}
-            }
+            //}
 
 
-            else if (message == 1)
-            {
-                if (s == "Yellow")
-                    Debug.Log("Good!");
-                else
-                    Debug.Log("Bad!");
-            }
+          //  else if (message == 1)
+          //  {
+          //      if (s == "Yellow")
+            //        Debug.Log("Good!");
+              //  else
+                //    Debug.Log("Bad!");
+            //}
             //Application.LoadLevel("BetatrialV1");}
             //>>>>>>> 1eefa693a7c40d2ee405fea5190dda8f83cdc8e1
 
@@ -192,12 +206,12 @@ public class CountDown : MonoBehaviour {
             // Debug.Log(LizardColor.a+"dsfsd"+CheckPurpleR);
             //Application.LoadLevel("BetatrialV3");}
 
-            else if (message == 2)
-            {
-                if (s == "Purple")
-                    Debug.Log("Good!");
-                else
-                    Debug.Log("Bad!");
+           // else if (message == 2)
+           // {
+            //    if (s == "Purple")
+            //        Debug.Log("Good!");
+            //    else
+              //      Debug.Log("Bad!");
                 //Application.LoadLevel("BetatrialV1");}
 
 
@@ -206,15 +220,15 @@ public class CountDown : MonoBehaviour {
                 // GameObject.Find("countdown").GetComponent<Text>().text = "Catch!";
 
 
-                timeLeft = 5.0f;
+            
 
                 //GameObject.Find("countdown").GetComponent<Text>().color=Color.white;
                 // message = Random.Range(0,3);
                 //  Debug.Log(message);
-            }
+           // }
 
 
-
+            timeLeft = 10.0f;
 
 
 
