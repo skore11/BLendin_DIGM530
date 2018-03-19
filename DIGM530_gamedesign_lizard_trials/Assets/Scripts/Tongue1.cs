@@ -23,6 +23,7 @@ public class Tongue1 : MonoBehaviour
 
 	private AudioSource source;
     private Vector2 mousePos;
+    private float degree;
 
 
 	void Start(){
@@ -37,19 +38,31 @@ public class Tongue1 : MonoBehaviour
     void Update()
     {
         CheckBackgroundColor();
-        mousePos=GameObject.Find("cursor").GetComponent<RectTransform>().anchoredPosition; 
+        degree=GameObject.Find("cursor").GetComponent<RectTransform>().rotation.z;
+        Debug.Log(degree);
+
+
+        
+           mousePos = (Vector2)(Quaternion.Euler(0,0,degree) * Vector2.right);
+
+
        
+           Debug.Log(mousePos);
+
+
         
         //int mask = LayerMask.GetMask("fly");
         if (Input.GetButtonDown("Right Bumper"))
 
         { 
+            Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(mousePos).y, Camera.main.ScreenToWorldPoint(mousePos).x);
 
-            Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
 
-            //Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.nearClipPlane));
+            //Vector3 mousePosition = new Vector3(0, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
 
-            //Debug.Log(mousePosition);
+            //Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.nearClipPlane, mousePos.y, mousePos.x));
+
+            Debug.Log(mousePosition);
 
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);

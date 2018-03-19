@@ -4,7 +4,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Crosshair : MonoBehaviour {
-
+  public float xoffset;
+  public float yoffset;
+ private Vector2 cursorPoint;
 
    // Rect crosshairRect;
    // public Texture crosshairTexture;
@@ -16,6 +18,16 @@ public class Crosshair : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+   
+    cursorPoint.x=Screen.width/2+xoffset;
+    cursorPoint.y=Screen.width/2+yoffset;
+
+    
+     objcursor.GetComponent<RectTransform>().anchoredPosition =cursorPoint;
+
+
+   
     // rt=objcursor.GetComponent<RectTransform>();
         //Cursor.visible = false; 
 
@@ -32,18 +44,18 @@ public class Crosshair : MonoBehaviour {
         //var y = Input.GetAxis("Jump") * Time.deltaTime * speed;
         //transform.Translate(x, y, z);
 
-       float speedx = Screen.width;
+       //float speedx = Screen.width;
         float speedy = Screen.height;
       
-        float x =Input.GetAxis("RightJoystickX") * speedx;
-        float y=Input.GetAxis("RightJoystickY") * speedy;
+       // float x =Input.GetAxis("RightJoystickX") * speedx;
+        float y=Input.GetAxis("RightJoystickY");//* speedy;
 
         //print (x);
-        //print (y);
+    
         //print(Screen.height);
         //print(Screen.width);
 
-
+        objcursor.GetComponent<RectTransform>().Rotate( new Vector3( 0, 0, y ) );
         
         //Vector3 newPos = new Vector3(x, y,0);
 
@@ -53,7 +65,7 @@ public class Crosshair : MonoBehaviour {
 
        // objcursor.GetComponent<RectTransform>().transform.position = Vector3.MoveTowards( objcursor.GetComponent<RectTransform>().transform.position, newPos, Time.deltaTime * 2.0f);
        
-        objcursor.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
+        //objcursor.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
 
        
     }
