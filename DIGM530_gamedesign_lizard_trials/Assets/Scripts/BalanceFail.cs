@@ -57,13 +57,14 @@ public class BalanceFail : MonoBehaviour {
 
 	{//failtext.text= "You failed!";
 
-       //Application.LoadLevel("GoldScene");}
+       Application.LoadLevel("GoldSceneV2");
+   }
 
-	   Debug.Log("Balance Failed!");
+	   //Debug.Log("Balance Failed!");
 
-	 }  
+	   
 
-    }
+    
 
     else
     {
@@ -78,4 +79,5 @@ public class BalanceFail : MonoBehaviour {
 
 		
 	}
+}
 }

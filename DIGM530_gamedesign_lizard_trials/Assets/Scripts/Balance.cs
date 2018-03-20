@@ -58,7 +58,7 @@ public class Balance : MonoBehaviour {
 
 		//print (transform.rotation.eulerAngles.z);
 
-		if (45.0f<transform.rotation.eulerAngles.z && transform.rotation.eulerAngles.z<315.0f)
+		if (60.0f<transform.rotation.eulerAngles.z && transform.rotation.eulerAngles.z<300.0f)
 			
 		{  GameObject.Find("warning").GetComponent<Text>().text = "Out of Range "; 
 		  balancefail=true;}

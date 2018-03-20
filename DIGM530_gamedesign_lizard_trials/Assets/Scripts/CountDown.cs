@@ -126,16 +126,16 @@ public class CountDown : MonoBehaviour {
                     Debug.Log("Good!");
                    else
                     {Debug.Log("g not match");
-                    Application.LoadLevel("GoldScene"); }
+                    Application.LoadLevel("GoldSceneV2"); }
                  }
               else   
              { Debug.Log("b not match");
-            Application.LoadLevel("GoldScene");}
+            Application.LoadLevel("GoldSceneV2");}
                
             }
             else
            { Debug.Log("r not match");
-            Application.LoadLevel("GoldScene");}
+            Application.LoadLevel("GoldSceneV2");}
             /*if (Mathf.Approximately(LizardColor.r, bbcolor.r))
             { Debug.Log("r");
 

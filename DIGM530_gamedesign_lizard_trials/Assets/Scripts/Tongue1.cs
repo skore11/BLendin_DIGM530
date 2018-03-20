@@ -39,7 +39,7 @@ public class Tongue1 : MonoBehaviour
     {
         CheckBackgroundColor();
         degree=GameObject.Find("cursor").GetComponent<RectTransform>().rotation.z;
-        Debug.Log(degree);
+       // Debug.Log(degree);
 
 
         
@@ -47,7 +47,7 @@ public class Tongue1 : MonoBehaviour
 
 
        
-           Debug.Log(mousePos);
+          // Debug.Log(mousePos);
 
 
         
@@ -62,7 +62,7 @@ public class Tongue1 : MonoBehaviour
 
             //Vector3 mousePosition= Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.nearClipPlane, mousePos.y, mousePos.x));
 
-            Debug.Log(mousePosition);
+            //Debug.Log(mousePosition);
 
             //Debug.Log(mousePosition);
 			source.PlayOneShot(tongue,1f);

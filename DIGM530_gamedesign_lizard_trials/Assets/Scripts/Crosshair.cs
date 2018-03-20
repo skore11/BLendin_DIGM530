@@ -4,9 +4,18 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Crosshair : MonoBehaviour {
-  public float xoffset;
-  public float yoffset;
- private Vector2 cursorPoint;
+
+ private Vector2 StartPosion;
+ private Vector2 EndPosition;
+
+  public float offsetx =-50.0f;
+  public float offsety =-50.0f;
+
+ public Transform lizard;
+ public RectTransform canvasRectT;
+
+   
+
 
    // Rect crosshairRect;
    // public Texture crosshairTexture;
@@ -15,16 +24,18 @@ public class Crosshair : MonoBehaviour {
 
   public GameObject objcursor;
 
+  private float t=0;
+  public  float timeToReachTarget=0.01f;
 
 	// Use this for initialization
 	void Start () {
 
    
-    cursorPoint.x=Screen.width/2+xoffset;
-    cursorPoint.y=Screen.width/2+yoffset;
+    //cursorPoint.x=Screen.width/2+xoffset;
+//    cursorPoint.y=Screen.width/2+yoffset;
 
     
-     objcursor.GetComponent<RectTransform>().anchoredPosition =cursorPoint;
+    StartPosion=objcursor.GetComponent<RectTransform>().anchoredPosition;
 
 
    
@@ -45,7 +56,21 @@ public class Crosshair : MonoBehaviour {
         //transform.Translate(x, y, z);
 
        //float speedx = Screen.width;
-        float speedy = Screen.height;
+
+
+
+       Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, lizard.position);
+     EndPosition = screenPoint - canvasRectT.sizeDelta / 2f ;
+     EndPosition.x+=offsetx;
+     EndPosition.y+=offsety;
+    // EndPosition.y+=Screen.height;
+
+      t += Time.deltaTime/timeToReachTarget;
+    
+    objcursor.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp (StartPosion,EndPosition,t);
+
+
+        //float speedy = Screen.height;
       
        // float x =Input.GetAxis("RightJoystickX") * speedx;
         float y=Input.GetAxis("RightJoystickY");//* speedy;
