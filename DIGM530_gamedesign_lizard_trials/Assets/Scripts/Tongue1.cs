@@ -12,7 +12,7 @@ public class Tongue1 : MonoBehaviour
     private bool attached = false;
     public float momentum;
     private float mouseposY;
-    private Vector3 rayHitWorldPosition;
+    //private Vector3 rayHitWorldPosition;
     public float speed;
 //  	private int rayRange = 100;
     public float step;
@@ -70,7 +70,7 @@ public class Tongue1 : MonoBehaviour
                 {
                 
                 //Debug.DrawRay(liz.position, mousePosition, Color.green);
-                rayHitWorldPosition = hit.point;
+                //rayHitWorldPosition = hit.point;
                // Debug.Log("hit someshit" + rayHitWorldPosition);
                 //mouseposY = hit.point.y;
                 //Debug.Log("hit someshit" + hit);
@@ -96,9 +96,12 @@ public class Tongue1 : MonoBehaviour
             
             LineRenderer lineRenderer = liz.GetComponent<LineRenderer>();
             lineRenderer.enabled = true;
-            lineRenderer.SetVertexCount(2);
-            lineRenderer.SetPosition(0, liz.position);
-            lineRenderer.SetPosition(1, rb.transform.position);
+            //lineRenderer.SetVertexCount(2);
+            Vector3 [] position = new Vector3[2];
+            position[0] = liz.position;
+            position[1] = rb.transform.position;
+            lineRenderer.positionCount = position.Length;
+            lineRenderer.SetPositions(position);
             if (Vector3.Distance(liz.transform.position, rb.transform.position) <= 3)
             {
 				// we swallow the fly: disable fly, disable line, change color:
